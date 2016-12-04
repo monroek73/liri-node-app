@@ -1,6 +1,8 @@
 var Twitter = require('twitter');
 var Spotify = require('spotify');
 var OMDB = require("OMDB");
+var keys = require('./keys.js');
+console.log(keys.twitterKeys);
  
 var client = new Twitter({
   consumer_key: 'cANMXMokPtDt0P83kqPAFpY41',
@@ -8,25 +10,24 @@ var client = new Twitter({
   access_token_key: '35086467-1ItNfyBBkls5vV42J4spEDiYxB1R32C7zad3GuV0y',
   access_token_secret: 'RKkUuMDVHiGQr5gQuLBsCrDqv18WwZKy7ABXaYkQkgHFJ'
 });
-var params = {screen_name: 'nodejs'};
+
+var params = {screen_name: 'monroeki'};
 client.get('statuses/user_timeline', params, function(error, tweets, response) {
   if (!error) {
     console.log(tweets);
   }
 });
-exports.twitterKeys = function{
-	this.
+ exports.twitterKeys = function {
+	 this.
 }
 
-var spotify = require('spotify');
- 
 spotify.search({ type: 'track', query: 'dancing in the moonlight' }, function(err, data) {
-    if ( err ) {
-        console.log('Error occurred: ' + err);
-        return;
-    }
+    if ( err ) 
+            console.log('Error occurred: ' + err);
+         return;
+     }
  
-    // Do something with 'data' 
+     Do something with 'data' 
 });
 
 var omdb = require('omdb');
@@ -66,4 +67,5 @@ omdb.get({ title: 'Saw', year: 2004 }, true, function(err, movie) {
     // Saw (2004) 7.6/10 
     // Two men wake up at opposite sides of a dirty, disused bathroom, chained 
     // by their ankles to pipes. Between them lies... 
-});
+
+
